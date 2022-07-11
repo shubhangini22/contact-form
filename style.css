@@ -1,5 +1,6 @@
 #img{
-    background-image: url("w2.jpg");
+    background-image: url("w3.jpg");
     background-repeat: no-repeat;
-    background-position: 100vh;
+    background-attachment: fixed;
+    background-size: contain;
 }
