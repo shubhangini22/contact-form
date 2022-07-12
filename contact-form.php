@@ -13,7 +13,7 @@
         if (!$_POST["content"]) {
             
             $error .= "The content field is required.<br>";
-            
+
         }
         
         if (!$_POST["subject"]) {
@@ -45,7 +45,7 @@
             if (mail($emailTo, $subject, $content, $headers)) {
                 
                 $successMessage = '<div class="alert alert-success" role="alert">Your message was sent, we\'ll get back to you ASAP!</div>';
-                
+                            //backslash  to tell that it's a part of string
                 
             } else {
                 
@@ -71,16 +71,18 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
   </head>
   <body>
       
+        <img src="w3.jpg" id="img">
       <div class="container">
       
     <h1>Get in touch!</h1>
       
       <div id="error"><? echo $error.$successMessage; ?></div>
-      
+      <!--Echoing error message-->
       <form method="post">
   <fieldset class="form-group">
     <label for="email">Email address</label>
@@ -97,12 +99,12 @@
   </fieldset>
   <button type="submit" id="submit" class="btn btn-primary">Submit</button>
 </form>
-          
-        </div>
+</div>
+
 
     <!-- jQuery first, then Bootstrap JS. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
           
           
     <script type="text/javascript">
@@ -138,7 +140,7 @@
               } else {
                   
                   return true;
-                  
+                  //return true makes the form submitted automatically
               }
           })
           
